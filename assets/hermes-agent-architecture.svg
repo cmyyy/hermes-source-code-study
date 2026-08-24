@@ -1,0 +1,143 @@
+<svg viewBox="0 0 1040 960" xmlns="http://www.w3.org/2000/svg" font-family="'JetBrains Mono',ui-monospace,monospace">
+      <defs>
+        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.5"/>
+        </pattern>
+        <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto">
+          <path d="M0,0 L8,4 L0,8 z" fill="#475569"/>
+        </marker>
+        <marker id="arrd" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto">
+          <path d="M0,0 L8,4 L0,8 z" fill="#fb7185"/>
+        </marker>
+      </defs>
+      <rect width="1040" height="1220" fill="url(#grid)"/>
+
+      <!-- ===== 标题 ===== -->
+      <text x="40" y="52" font-size="22" font-weight="600" fill="#f1f5f9">Hermes Agent 架构</text>
+      <text x="40" y="78" font-size="12" fill="#64748b">基于源码研读 · v0.19.0 · commit d7f033a40 · Agent 回合生命周期</text>
+
+      <!-- ===== 箭头（先画，置于组件之下） ===== -->
+      <!-- 入口 → 初始化 -->
+      <line x1="520" y1="188" x2="520.0" y2="200.0" stroke="#475569" stroke-width="1.5"/><polygon points="520.0,216.0 515.5,200.0 524.5,200.0" fill="#475569"/>
+      <!-- 初始化 → 回合循环 -->
+      <line x1="520" y1="300" x2="520.0" y2="324.0" stroke="#475569" stroke-width="1.5"/><polygon points="520.0,340.0 515.5,324.0 524.5,324.0" fill="#475569"/>
+      <!-- 回合循环 → LLM 层 -->
+      <line x1="520" y1="602" x2="520.0" y2="648.0" stroke="#475569" stroke-width="1.5"/><polygon points="520.0,664.0 515.5,648.0 524.5,648.0" fill="#475569"/>
+      <!-- LLM 层 → Provider -->
+      <line x1="520" y1="748" x2="520.0" y2="784.0" stroke="#475569" stroke-width="1.5"/><polygon points="520.0,800.0 515.5,784.0 524.5,784.0" fill="#475569"/>
+      <!-- 核心 ↔ 扩展机制（双向虚线，冷路） -->
+      <line x1="340" y1="435" x2="298.0" y2="435.0" stroke="#fb7185" stroke-width="1.5" stroke-dasharray="4,4"/><polygon points="282.0,435.0 298.0,430.5 298.0,439.5" fill="#fb7185"/>
+      <line x1="282" y1="447" x2="324.0" y2="447.0" stroke="#fb7185" stroke-width="1.5" stroke-dasharray="4,4"/><polygon points="340.0,447.0 324.0,451.5 324.0,442.5" fill="#fb7185"/>
+      <!-- 核心 → 工具执行 -->
+      <line x1="700" y1="400" x2="740.0" y2="400.0" stroke="#fb923c" stroke-width="1.5"/><polygon points="756.0,400.0 740.0,404.5 740.0,395.5" fill="#fb923c"/>
+      <!-- 工具执行 → 核心（回填） -->
+      <line x1="756" y1="560" x2="716.0" y2="560.0" stroke="#fb923c" stroke-width="1.5" stroke-dasharray="4,4"/><polygon points="700.0,560.0 716.0,555.5 716.0,564.5" fill="#fb923c"/>
+      <!-- 核心 ↔ 状态与记忆 -->
+      <line x1="340" y1="528" x2="279.2" y2="649.7" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="4,4"/><polygon points="272.0,664.0 275.1,647.7 283.2,651.7" fill="#a78bfa"/>
+      <line x1="282" y1="662" x2="332.9" y2="559.3" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="4,4"/><polygon points="340.0,545.0 336.9,561.3 328.9,557.3" fill="#a78bfa"/>
+
+      <!-- ===== 组件（double-rect masking） ===== -->
+      <!-- 入口（cyan） -->
+      <g>
+        <rect x="360" y="104" width="320" height="84" rx="8" fill="#0f172a"/>
+        <rect x="360" y="104" width="320" height="84" rx="8" fill="rgba(8,51,68,0.4)" stroke="#22d3ee" stroke-width="1.5"/>
+        <text x="520" y="132" font-size="13" fill="#e0f2fe" text-anchor="middle">入口 · CLI / Gateway / 飞书</text>
+        <text x="520" y="152" font-size="9.5" fill="#7dd3fc" text-anchor="middle">cli.py（CLI 入口）· run_agent.py 引擎</text>
+        <text x="520" y="170" font-size="9" fill="#94a3b8" text-anchor="middle">AIAgent 类 + main() 核心宿主</text>
+      </g>
+
+      <!-- Agent 初始化（cyan） -->
+      <g>
+        <rect x="360" y="216" width="320" height="84" rx="8" fill="#0f172a"/>
+        <rect x="360" y="216" width="320" height="84" rx="8" fill="rgba(8,51,68,0.4)" stroke="#22d3ee" stroke-width="1.5"/>
+        <text x="520" y="244" font-size="13" fill="#e0f2fe" text-anchor="middle">Agent 初始化</text>
+        <text x="520" y="264" font-size="9.5" fill="#7dd3fc" text-anchor="middle">agent/agent_init.py（3030 行）</text>
+        <text x="520" y="282" font-size="9" fill="#94a3b8" text-anchor="middle">构建 AIAgent 对象 · 装配工具 / hooks</text>
+      </g>
+
+      <!-- 回合主循环（emerald 核心） -->
+      <g>
+        <rect x="340" y="340" width="360" height="262" rx="10" fill="#0f172a"/>
+        <rect x="340" y="340" width="360" height="262" rx="10" fill="rgba(6,78,59,0.4)" stroke="#34d399" stroke-width="1.5"/>
+        <text x="520" y="370" font-size="14" font-weight="600" fill="#d1fae5" text-anchor="middle">run_conversation() — 回合主循环</text>
+        <text x="520" y="390" font-size="9.5" fill="#6ee7b7" text-anchor="middle">agent/conversation_loop.py（8436 行）</text>
+        <text x="520" y="416" font-size="9" fill="#94a3b8" text-anchor="middle">读上下文 → 调 LLM → 执行工具 → 回填结果 → 输出 → 回写</text>
+        <text x="520" y="436" font-size="9" fill="#94a3b8" text-anchor="middle">（工具结果以 tool 结果回填上下文 · 循环至完成）</text>
+        <line x1="368" y1="452" x2="672" y2="452" stroke="#34d399" stroke-width="0.8" opacity="0.5"/>
+        <text x="520" y="474" font-size="9" fill="#6ee7b7" text-anchor="middle">滚动调度（fallback / 重试）</text>
+        <text x="520" y="492" font-size="9" fill="#6ee7b7" text-anchor="middle">每回合追加上下文 · 压缩预算守卫</text>
+        <text x="520" y="510" font-size="9" fill="#6ee7b7" text-anchor="middle">流式 / 非流式响应 · 引用交接（handoff）</text>
+      </g>
+
+      <!-- LLM 调用层（emerald） -->
+      <g>
+        <rect x="360" y="664" width="320" height="84" rx="8" fill="#0f172a"/>
+        <rect x="360" y="664" width="320" height="84" rx="8" fill="rgba(6,78,59,0.4)" stroke="#34d399" stroke-width="1.5"/>
+        <text x="520" y="692" font-size="13" fill="#d1fae5" text-anchor="middle">LLM 调用层</text>
+        <text x="520" y="712" font-size="9.5" fill="#6ee7b7" text-anchor="middle">chat_completion_helpers.py</text>
+        <text x="520" y="730" font-size="9" fill="#94a3b8" text-anchor="middle">prompt 组装 · 工具调用解析 · 能力适配</text>
+      </g>
+
+      <!-- 模型 Provider（amber 外部） -->
+      <g>
+        <rect x="340" y="800" width="360" height="104" rx="8" fill="#0f172a"/>
+        <rect x="340" y="800" width="360" height="104" rx="8" fill="rgba(120,53,15,0.3)" stroke="#fbbf24" stroke-width="1.5"/>
+        <text x="520" y="828" font-size="13" fill="#fef3c7" text-anchor="middle">模型 Provider</text>
+        <text x="520" y="850" font-size="9.5" fill="#fde68a" text-anchor="middle">DeepSeek / OpenAI / Anthropic / Ollama / Bedrock</text>
+        <text x="520" y="870" font-size="9" fill="#94a3b8" text-anchor="middle">统一 OpenAI 兼容接口 · 多 provider 凭据池 + fallback 链</text>
+        <text x="520" y="888" font-size="9" fill="#94a3b8" text-anchor="middle">thinking / reasoning_effort 按 provider 适配</text>
+      </g>
+
+      <!-- 扩展机制（rose 扩展） -->
+      <g>
+        <rect x="50" y="340" width="230" height="262" rx="8" fill="#0f172a"/>
+        <rect x="50" y="340" width="230" height="262" rx="8" fill="rgba(136,19,55,0.4)" stroke="#fb7185" stroke-width="1.5"/>
+        <text x="165" y="370" font-size="13" fill="#ffe4e6" text-anchor="middle">扩展机制</text>
+        <text x="165" y="392" font-size="9.5" fill="#fda4af" text-anchor="middle">插件钩子（pre / post API）</text>
+        <text x="165" y="412" font-size="9.5" fill="#fda4af" text-anchor="middle">MCP 服务器接入</text>
+        <text x="165" y="432" font-size="9.5" fill="#fda4af" text-anchor="middle">context engine 注入</text>
+        <text x="165" y="452" font-size="9" fill="#94a3b8" text-anchor="middle">在回合前 / 后挂载</text>
+      </g>
+
+      <!-- 状态与记忆（violet 状态） -->
+      <g>
+        <rect x="50" y="664" width="230" height="140" rx="8" fill="#0f172a"/>
+        <rect x="50" y="664" width="230" height="140" rx="8" fill="rgba(76,29,149,0.4)" stroke="#a78bfa" stroke-width="1.5"/>
+        <text x="165" y="694" font-size="13" fill="#ede9fe" text-anchor="middle">状态与记忆</text>
+        <text x="165" y="716" font-size="9.5" fill="#c4b5fd" text-anchor="middle">SQLite 会话存储</text>
+        <text x="165" y="736" font-size="9" fill="#94a3b8" text-anchor="middle">state.db + FTS5 检索</text>
+        <text x="165" y="756" font-size="9.5" fill="#c4b5fd" text-anchor="middle">上下文压缩（超阈值自动）</text>
+        <text x="165" y="776" font-size="9.5" fill="#c4b5fd" text-anchor="middle">prompt cache 守护</text>
+      </g>
+
+      <!-- 工具执行（orange 工具） -->
+      <g>
+        <rect x="758" y="340" width="230" height="262" rx="8" fill="#0f172a"/>
+        <rect x="758" y="340" width="230" height="262" rx="8" fill="rgba(251,146,60,0.3)" stroke="#fb923c" stroke-width="1.5"/>
+        <text x="873" y="370" font-size="13" fill="#ffedd5" text-anchor="middle">工具执行 execute_tool()</text>
+        <text x="873" y="392" font-size="9.5" fill="#fdba74" text-anchor="middle">终端 / 浏览器 / 文件</text>
+        <text x="873" y="412" font-size="9.5" fill="#fdba74" text-anchor="middle">安全护栏（审批 / 敏感词拦截）</text>
+        <text x="873" y="432" font-size="9" fill="#94a3b8" text-anchor="middle">结果以 tool 结果回填</text>
+        <text x="873" y="452" font-size="9" fill="#94a3b8" text-anchor="middle">供下一回合上下文</text>
+      </g>
+
+      <!-- ===== 图例 ===== -->
+      <g font-size="11">
+        <line x1="50" y1="940" x2="96.0" y2="940.0" stroke="#475569" stroke-width="1.5"/><polygon points="112.0,940.0 96.0,944.5 96.0,935.5" fill="#475569"/>
+        <text x="118" y="944" fill="#94a3b8">调用链（热路）</text>
+        <line x1="250" y1="940" x2="296.0" y2="940.0" stroke="#fb7185" stroke-width="1.5" stroke-dasharray="4,4"/><polygon points="312.0,940.0 296.0,944.5 296.0,935.5" fill="#fb7185"/>
+        <text x="318" y="944" fill="#94a3b8">回写 / 异常（冷路）</text>
+        <rect x="470" y="934" width="26" height="12" rx="3" fill="rgba(8,51,68,0.4)" stroke="#22d3ee"/>
+        <text x="504" y="944" fill="#94a3b8">入口</text>
+        <rect x="560" y="934" width="26" height="12" rx="3" fill="rgba(6,78,59,0.4)" stroke="#34d399"/>
+        <text x="594" y="944" fill="#94a3b8">核心</text>
+        <rect x="650" y="934" width="26" height="12" rx="3" fill="rgba(251,146,60,0.3)" stroke="#fb923c"/>
+        <text x="684" y="944" fill="#94a3b8">工具</text>
+        <rect x="740" y="934" width="26" height="12" rx="3" fill="rgba(136,19,55,0.4)" stroke="#fb7185"/>
+        <text x="774" y="944" fill="#94a3b8">扩展</text>
+        <rect x="830" y="934" width="26" height="12" rx="3" fill="rgba(76,29,149,0.4)" stroke="#a78bfa"/>
+        <text x="864" y="944" fill="#94a3b8">状态</text>
+        <rect x="920" y="934" width="26" height="12" rx="3" fill="rgba(120,53,15,0.3)" stroke="#fbbf24"/>
+        <text x="954" y="944" fill="#94a3b8">外部</text>
+      </g>
+    </svg>

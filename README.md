@@ -8,7 +8,7 @@ Hermes 是一个**生产级 Agent 框架**：它的价值不在"能调 LLM"，�
 
 ## 研读方法
 
-1. **以 run_conversation 为主轴**（约 5800 行的 god function，一个 Agent 回合的完整生命周期）
+1. **以 run_conversation 为主轴**（约 6675 行的 god function，一个 Agent 回合的完整生命周期）
 2. **六阶段拆解**：回合启动 → 请求组装 → 请求执行 → 响应处理 → 错误恢复 → 工具执行与收尾
 3. **分层读**：主流程 / 容错恢复 / 旁路钩子——三层逻辑混在一起，分清就不迷路
 4. **锚点稳定**：笔记用「函数名 + 关键符号」定位（如 `_last_compaction_in_place`），不用行号——符号跨版本稳定
@@ -20,20 +20,21 @@ Hermes 是一个**生产级 Agent 框架**：它的价值不在"能调 LLM"，�
 | 框架 | Hermes Agent |
 | 版本 | v0.19.0 |
 | Commit | `d71033a40` |
-| 主文件 | `agent/conversation_loop.py`（5800 行 god function） |
+| 主文件 | `agent/conversation_loop.py` |
+| 回合主循环函数 | `run_conversation()`（约 6675 行；文件共 8436 行） |
 | 研读时间 | 2026-07 ~ 2026-08 |
 
 > 笔记中的函数名/符号基于上述版本；跨版本定位请按函数名搜索，勿依赖行号。
 
 ## 架构总览
 
-[![Hermes 架构图](assets/hermes-architecture.html)](assets/hermes-architecture.html)
-（浏览器打开架构图）
+[![Hermes 架构图](assets/hermes-agent-architecture.svg)](assets/hermes-agent-architecture.html)
+（浏览器打开架构图，README 内嵌为 SVG 预览）
 
 ```
 入口（CLI/Gateway/飞书）
   → agent_init.py（组装 agent）
-    → run_conversation()（Agent 回合主循环：5800 行）
+    → run_conversation()（Agent 回合主循环：约 6675 行）
       → chat_completion_helpers.py（LLM 调用：流式/非流式、认证池、fallback）
         → 模型 Provider（DeepSeek/OpenAI/Anthropic/Ollama/Bedrock）
       ↖ 工具执行回环（execute_tool）

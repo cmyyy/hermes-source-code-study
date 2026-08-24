@@ -51,7 +51,7 @@
         <rect x="360" y="216" width="320" height="84" rx="8" fill="#0f172a"/>
         <rect x="360" y="216" width="320" height="84" rx="8" fill="rgba(8,51,68,0.4)" stroke="#22d3ee" stroke-width="1.5"/>
         <text x="520" y="244" font-size="13" fill="#e0f2fe" text-anchor="middle">Agent 初始化</text>
-        <text x="520" y="264" font-size="9.5" fill="#7dd3fc" text-anchor="middle">agent/agent_init.py（3030 行）</text>
+        <text x="520" y="264" font-size="9.5" fill="#7dd3fc" text-anchor="middle">agent/agent_init.py</text>
         <text x="520" y="282" font-size="9" fill="#94a3b8" text-anchor="middle">构建 AIAgent 对象 · 装配工具 / hooks</text>
       </g>
 
@@ -60,7 +60,7 @@
         <rect x="340" y="340" width="360" height="262" rx="10" fill="#0f172a"/>
         <rect x="340" y="340" width="360" height="262" rx="10" fill="rgba(6,78,59,0.4)" stroke="#34d399" stroke-width="1.5"/>
         <text x="520" y="370" font-size="14" font-weight="600" fill="#d1fae5" text-anchor="middle">run_conversation() — 回合主循环</text>
-        <text x="520" y="390" font-size="9.5" fill="#6ee7b7" text-anchor="middle">agent/conversation_loop.py（8436 行）</text>
+        <text x="520" y="390" font-size="9.5" fill="#6ee7b7" text-anchor="middle">agent/conversation_loop.py</text>
         <text x="520" y="416" font-size="9" fill="#94a3b8" text-anchor="middle">读上下文 → 调 LLM → 执行工具 → 回填结果 → 输出 → 回写</text>
         <text x="520" y="436" font-size="9" fill="#94a3b8" text-anchor="middle">（工具结果以 tool 结果回填上下文 · 循环至完成）</text>
         <line x1="368" y1="452" x2="672" y2="452" stroke="#34d399" stroke-width="0.8" opacity="0.5"/>

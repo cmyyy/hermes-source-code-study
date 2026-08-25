@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="1020" viewBox="0 0 860 1020"><rect width="100%" height="100%" fill="#020617"/>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.5"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"/>
+    </marker>
+    <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#fb7185"/>
+    </marker>
+    <marker id="arrowOrg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#fb923c"/>
+    </marker>
+  </defs>
+  <rect width="860" height="1020" fill="url(#grid)"/>
+
+  <!-- ═══ 中央主线（青灰实线）═══ -->
+  <!-- 回合开始 → A -->
+  <line x1="380" y1="65" x2="380" y2="95" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <!-- A → B -->
+  <line x1="380" y1="155" x2="380" y2="185" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <!-- B → C -->
+  <line x1="380" y1="245" x2="380" y2="275" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <!-- C → 判断 -->
+  <line x1="380" y1="335" x2="380" y2="365" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <!-- 判断 否(下) → D -->
+  <line x1="380" y1="435" x2="380" y2="465" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="392" y="455" fill="#94a3b8" font-size="9">否</text>
+  <!-- D 成功(下) → F -->
+  <line x1="380" y1="545" x2="380" y2="780" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="392" y="640" fill="#94a3b8" font-size="9">成功</text>
+  <!-- F → 回合结束 -->
+  <line x1="380" y1="835" x2="380" y2="860" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ═══ 右侧工具通道（橙色虚线）═══ -->
+  <!-- 判断 是(右顶点 440,400) → 工具执行（入箭头：y=400 水平） -->
+  <path d="M 440 400 L 620 400 L 620 465" fill="none" stroke="#fb923c" stroke-width="1.5" marker-end="url(#arrowOrg)"/>
+  <text x="510" y="392" fill="#fb923c" font-size="9">是</text>
+  <!-- 工具结果 → 右侧回环 → 回判断右顶点（出箭头：y=380 水平 + 垂直降入顶点，与入箭头分离） -->
+  <path d="M 620 545 L 620 600 L 780 600 L 780 380 L 440 380 L 440 400" fill="none" stroke="#fb923c" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arrowOrg)"/>
+  <text x="640" y="590" fill="#fb923c" font-size="9">tool 结果回注</text>
+
+  <!-- ═══ 左侧错误通道（红色虚线）═══ -->
+  <!-- D 出错(左边界 280,505) → E -->
+  <path d="M 280 505 L 130 505 L 130 620" fill="none" stroke="#fb7185" stroke-width="2" marker-end="url(#arrowRed)"/>
+  <text x="150" y="498" fill="#fb7185" font-size="9">出错</text>
+  <!-- E 恢复 → 左侧回环（x=15，E 方块外）→ 回判断左顶点 -->
+  <path d="M 130 700 L 130 755 L 15 755 L 15 400 L 320 400" fill="none" stroke="#fb7185" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arrowRed)"/>
+  <text x="22" y="745" fill="#fb7185" font-size="9">恢复后重试</text>
+
+  <!-- ═══ 节点 ═══ -->
+  <!-- 回合开始 -->
+  <rect x="300" y="25" width="160" height="40" rx="20" fill="rgba(8,51,68,0.5)" stroke="#22d3ee" stroke-width="1.5"/>
+  <text x="380" y="49" fill="#22d3ee" font-size="11" text-anchor="middle" font-weight="bold">回合开始</text>
+
+  <!-- A 启动 -->
+  <rect x="230" y="95" width="300" height="60" rx="6" fill="rgba(6,78,59,0.4)" stroke="#34d399" stroke-width="1.5"/>
+  <text x="380" y="119" fill="#34d399" font-size="11" text-anchor="middle" font-weight="bold">A 回合启动</text>
+  <text x="380" y="136" fill="#94a3b8" font-size="9" text-anchor="middle">状态归零 / 解码 MoA / build_turn_context</text>
+
+  <!-- B 组装 -->
+  <rect x="230" y="185" width="300" height="60" rx="6" fill="rgba(6,78,59,0.4)" stroke="#34d399" stroke-width="1.5"/>
+  <text x="380" y="209" fill="#34d399" font-size="11" text-anchor="middle" font-weight="bold">B 请求组装</text>
+  <text x="380" y="226" fill="#94a3b8" font-size="9" text-anchor="middle">消毒 → 组装 → 规范化 → 缓存打标 → 压力检查</text>
+
+  <!-- C 执行 -->
+  <rect x="230" y="275" width="300" height="60" rx="6" fill="rgba(6,78,59,0.5)" stroke="#34d399" stroke-width="2"/>
+  <text x="380" y="299" fill="#34d399" font-size="11" text-anchor="middle" font-weight="bold">C 请求执行</text>
+  <text x="380" y="316" fill="#94a3b8" font-size="9" text-anchor="middle">LLM 调用（流式）· 中层 retry 循环</text>
+
+  <!-- 判断菱形（有工具调用?） -->
+  <polygon points="380,365 440,400 380,435 320,400" fill="rgba(6,78,59,0.3)" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="380" y="404" fill="#94a3b8" font-size="9" text-anchor="middle">有工具?</text>
+
+  <!-- 工具执行（右侧） -->
+  <rect x="520" y="465" width="200" height="80" rx="6" fill="rgba(251,146,60,0.35)" stroke="#fb923c" stroke-width="1.5"/>
+  <text x="620" y="489" fill="#fb923c" font-size="11" text-anchor="middle" font-weight="bold">工具执行</text>
+  <text x="620" y="506" fill="#94a3b8" font-size="9" text-anchor="middle">execute_tool()</text>
+  <text x="620" y="520" fill="#94a3b8" font-size="9" text-anchor="middle">验证 → 执行 → 持久化</text>
+
+  <!-- D 响应处理（中央） -->
+  <rect x="280" y="465" width="200" height="80" rx="6" fill="rgba(6,78,59,0.4)" stroke="#34d399" stroke-width="1.5"/>
+  <text x="380" y="489" fill="#34d399" font-size="11" text-anchor="middle" font-weight="bold">D 响应处理</text>
+  <text x="380" y="506" fill="#94a3b8" font-size="9" text-anchor="middle">验证形状 / finish_reason 分类</text>
+  <text x="380" y="520" fill="#94a3b8" font-size="9" text-anchor="middle">拒绝不重试 / 截断四路</text>
+
+  <!-- E 错误恢复（左侧，红色高亮） -->
+  <rect x="30" y="620" width="200" height="80" rx="6" fill="rgba(136,19,55,0.6)" stroke="#fb7185" stroke-width="2.5"/>
+  <text x="130" y="644" fill="#fb7185" font-size="11" text-anchor="middle" font-weight="bold">E 错误恢复 ★</text>
+  <text x="130" y="661" fill="#fda4af" font-size="9" text-anchor="middle">分类先行 → 定向恢复</text>
+  <text x="130" y="675" fill="#fda4af" font-size="9" text-anchor="middle">401 刷新 / 429 等限流</text>
+  <text x="130" y="689" fill="#fda4af" font-size="9" text-anchor="middle">溢出压缩 / fallback</text>
+
+  <!-- F 收尾 -->
+  <rect x="230" y="780" width="300" height="55" rx="6" fill="rgba(6,78,59,0.4)" stroke="#34d399" stroke-width="1.5"/>
+  <text x="380" y="804" fill="#34d399" font-size="11" text-anchor="middle" font-weight="bold">F 收尾</text>
+  <text x="380" y="821" fill="#94a3b8" font-size="9" text-anchor="middle">finalize_turn() · 存档 · 退出循环</text>
+
+  <!-- 回合结束 -->
+  <rect x="300" y="860" width="160" height="40" rx="20" fill="rgba(8,51,68,0.5)" stroke="#22d3ee" stroke-width="1.5"/>
+  <text x="380" y="884" fill="#22d3ee" font-size="11" text-anchor="middle" font-weight="bold">回合结束</text>
+
+  <!-- 图例 -->
+  <text x="40" y="950" fill="#94a3b8" font-size="10">图例：</text>
+  <line x1="95" y1="946" x2="145" y2="946" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="153" y="950" fill="#94a3b8" font-size="8">主流程（中央）</text>
+  <line x1="290" y1="946" x2="340" y2="946" stroke="#fb923c" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arrowOrg)"/>
+  <text x="348" y="950" fill="#94a3b8" font-size="8">工具通道（右侧）</text>
+  <line x1="510" y1="946" x2="560" y2="946" stroke="#fb7185" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arrowRed)"/>
+  <text x="568" y="950" fill="#94a3b8" font-size="8">错误通道（左侧）</text>
+</svg>

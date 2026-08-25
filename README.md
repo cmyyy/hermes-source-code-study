@@ -42,6 +42,11 @@ Hermes 是一个**生产级 Agent 框架**：它的价值不在"能调 LLM"，�
   → 状态：SQLite 会话 / 上下文压缩 / prompt cache
 ```
 
+## 主循环流程
+
+[![run_conversation 主循环流程图](assets/run-conversation-flow.svg)](assets/run-conversation-flow.html)
+（浏览器打开 HTML 查看完整流程，README 内嵌 SVG 预览——三层循环、工具通道回环、错误恢复分支）
+
 ## 笔记地图
 
 ### 核心：主循环六阶段

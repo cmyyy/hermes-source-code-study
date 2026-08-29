@@ -1,4 +1,6 @@
 # Hermes 初始化编排：init_agent 如何把 60+ 参数装成一台能跑的 Agent
+> [← 返回笔记地图](../README.md#笔记地图) · 环境与配套
+
 
 > 源码位置：agent/agent_init.py → `init_agent()`
 > 研读版本：hermes-agent v0.19.0（commit d71033a40）

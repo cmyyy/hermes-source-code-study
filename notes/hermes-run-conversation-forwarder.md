@@ -1,4 +1,6 @@
 # 入口转发器：run_agent.py 为什么只是个"跳板"
+> [← 返回笔记地图](../README.md#笔记地图) · 专题深挖
+
 
 > 源码位置：`run_agent.py` → `run_conversation()`（转发器）
 > 研读版本：hermes-agent v0.19.0（commit d71033a40）

@@ -49,36 +49,67 @@ Hermes 是一个**生产级 Agent 框架**：它的价值不在"能调 LLM"，�
 
 ## 笔记地图
 
-### 核心：主循环六阶段
+全部 35 篇，按主题分组，点击笔记名直接跳转；每篇笔记顶部有返回地图的导航条。
+
+### 核心：主循环六阶段（7 篇）
 
 | 笔记 | 覆盖 |
 |---|---|
 | [conversation-loop-run-conversation](notes/conversation-loop-run-conversation.md) | run_conversation 全解（总览） |
-| hermes-loop-entry-phase | 阶段 A：回合启动与迭代准备 |
-| hermes-request-assembly-extras | 阶段 B：请求组装 |
-| hermes-request-execution-phase | 阶段 C：请求执行 |
-| hermes-response-handling-phase | 阶段 D：响应处理 |
-| hermes-error-recovery-phase | 阶段 E：错误恢复（面试重点） |
-| hermes-tool-execution-finalize-phase | 阶段 F：工具执行与收尾 |
+| [hermes-loop-entry-phase](notes/hermes-loop-entry-phase.md) | 阶段 A：回合启动与迭代准备 |
+| [hermes-request-assembly-extras](notes/hermes-request-assembly-extras.md) | 阶段 B：请求组装 |
+| [hermes-request-execution-phase](notes/hermes-request-execution-phase.md) | 阶段 C：请求执行 |
+| [hermes-response-handling-phase](notes/hermes-response-handling-phase.md) | 阶段 D：响应处理 |
+| [hermes-error-recovery-phase](notes/hermes-error-recovery-phase.md) | 阶段 E：错误恢复（面试重点） |
+| [hermes-tool-execution-finalize-phase](notes/hermes-tool-execution-finalize-phase.md) | 阶段 F：工具执行与收尾 |
 
-### 关键机制
+### 关键机制（10 篇）
 
 | 笔记 | 主题 |
 |---|---|
-| hermes-compression-per-turn-state-reset | 压缩状态管理（gateway 复用 agent 对象） |
-| hermes-moa-context-injection | MoA 多模型协作 |
-| hermes-message-normalization | 消息规范化（prompt cache 字节稳定） |
-| hermes-anthropic-cache-control | Anthropic 缓存打标 |
-| hermes-build-turn-context | 回合上下文组装（12 字段） |
-| hermes-credential-pool-turn-reset | 认证池（多 key 轮换） |
-| hermes-message-sanitize | 消息消毒 |
-| hermes-prefill-messages | prefill 示范注入 |
-| hermes-tool-schema-registry | 工具 schema 注册 |
-| hermes-context-engine-selection | context engine 注入钩子 |
+| [hermes-compression-per-turn-state-reset](notes/hermes-compression-per-turn-state-reset.md) | 压缩状态管理（gateway 复用 agent 对象） |
+| [hermes-moa-context-injection](notes/hermes-moa-context-injection.md) | MoA 多模型协作 |
+| [hermes-message-normalization](notes/hermes-message-normalization.md) | 消息规范化（prompt cache 字节稳定） |
+| [hermes-anthropic-cache-control](notes/hermes-anthropic-cache-control.md) | Anthropic 缓存打标 |
+| [hermes-build-turn-context](notes/hermes-build-turn-context.md) | 回合上下文组装（12 字段） |
+| [hermes-credential-pool-turn-reset](notes/hermes-credential-pool-turn-reset.md) | 认证池（多 key 轮换） |
+| [hermes-message-sanitize](notes/hermes-message-sanitize.md) | 消息消毒 |
+| [hermes-prefill-messages](notes/hermes-prefill-messages.md) | prefill 示范注入 |
+| [hermes-tool-schema-registry](notes/hermes-tool-schema-registry.md) | 工具 schema 注册 |
+| [hermes-context-engine-selection](notes/hermes-context-engine-selection.md) | context engine 注入钩子 |
 
-### 设计细节
+### 专题深挖（8 篇）
 
-（其余 20+ 篇见 notes/ 目录，每篇讲一个具体机制的"解决什么问题/怎么设计/为什么好"）
+| 笔记 | 主题 |
+|---|---|
+| [hermes-api-messages-build](notes/hermes-api-messages-build.md) | api_messages 翻译层 |
+| [hermes-loop-counter-init](notes/hermes-loop-counter-init.md) | 主循环计数器初始化 |
+| [hermes-interim-text-dedup](notes/hermes-interim-text-dedup.md) | 过程旁白去重 |
+| [hermes-interrupt-partial-response-save](notes/hermes-interrupt-partial-response-save.md) | 中断时抢救半截回答 |
+| [hermes-pre-api-pressure-check](notes/hermes-pre-api-pressure-check.md) | 发请求前的压力检查 |
+| [hermes-run-conversation-forwarder](notes/hermes-run-conversation-forwarder.md) | 入口转发器 |
+| [hermes-step-callback-explained](notes/hermes-step-callback-explained.md) | step_callback 进度广播 |
+| [hermes-tool-call-message-structure](notes/hermes-tool-call-message-structure.md) | 工具调用消息合法结构 |
+
+### 故障排查与实战（6 篇）
+
+| 笔记 | 主题 |
+|---|---|
+| [hermes-cron-job-troubleshooting-2026-07-27](notes/hermes-cron-job-troubleshooting-2026-07-27.md) | Cron 排查实录 |
+| [hermes-desktop-launch-and-feishu-fix](notes/hermes-desktop-launch-and-feishu-fix.md) | Desktop 启动 + 飞书修复 |
+| [hermes-feishu-adapter-setup](notes/hermes-feishu-adapter-setup.md) | 飞书适配器配置与设计 |
+| [hermes-feishu-markdown-issue](notes/hermes-feishu-markdown-issue.md) | 飞书 markdown 取舍 |
+| [hermes-obsidian-llm-wiki-setup](notes/hermes-obsidian-llm-wiki-setup.md) | Hermes + Obsidian 第二大脑 |
+| [hermes-skill-nudge](notes/hermes-skill-nudge.md) | 让 Agent 主动沉淀经验 |
+
+### 环境与配套（4 篇）
+
+| 笔记 | 主题 |
+|---|---|
+| [hermes-agent-init-refactoring](notes/hermes-agent-init-refactoring.md) | init_agent 重构（巨型构造函数 → 可测试） |
+| [hermes-agent-init-structure](notes/hermes-agent-init-structure.md) | init_agent 编排（60+ 参数组装） |
+| [hermes-provider-profile-design](notes/hermes-provider-profile-design.md) | ProviderProfile 声明式设计 |
+| [hermes-steer-mechanism](notes/hermes-steer-mechanism.md) | /steer 递纸条机制 |
 
 ## 亮点（可引用的问题编号）
 

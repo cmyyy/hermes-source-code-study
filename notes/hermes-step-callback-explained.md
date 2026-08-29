@@ -1,4 +1,6 @@
 # step_callback：Agent 每走一步的"进度广播"
+> [← 返回笔记地图](../README.md#笔记地图) · 专题深挖
+
 
 > 源码位置：`agent/conversation_loop.py`（触发）→ `gateway/run.py` → `_step_callback_sync`（消费方）
 > 研读版本：hermes-agent v0.19.0（commit d71033a40）

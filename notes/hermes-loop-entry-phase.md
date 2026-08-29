@@ -1,4 +1,6 @@
 # 回合启动：问模型之前，先把所有准备做对
+> [← 返回笔记地图](../README.md#笔记地图) · 六阶段核心 · [← 上一篇](conversation-loop-run-conversation.md) · [下一篇 →](hermes-request-assembly-extras.md)
+
 
 > 源码位置：`agent/conversation_loop.py` → `run_conversation()` 入口与循环骨架（函数签名、回合前奏、主循环顶部）
 > 研读版本：hermes-agent v0.19.0（commit d71033a40）

@@ -1,4 +1,6 @@
 # 过程旁白去重：一个 set 的回合边界纪律
+> [← 返回笔记地图](../README.md#笔记地图) · 专题深挖
+
 
 > 源码位置：agent/conversation_loop.py → run_conversation（每回合开头重置）；run_agent.py → `_interim_text_was_delivered` / `_record_delivered_interim_text` / `_fire_streamed_codex_commentary`
 > 研读版本：hermes-agent v0.19.0（commit d71033a40）

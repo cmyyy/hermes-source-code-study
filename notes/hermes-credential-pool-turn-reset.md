@@ -1,4 +1,6 @@
 # 认证池与回合级状态归零：多把钥匙轮着用，还不怕死循环
+> [← 返回笔记地图](../README.md#笔记地图) · 关键机制
+
 
 > 源码位置：agent/conversation_loop.py → run_conversation（每回合开头）；实现 agent/credential_pool.py
 > 研读版本：hermes-agent v0.19.0（commit d71033a40）

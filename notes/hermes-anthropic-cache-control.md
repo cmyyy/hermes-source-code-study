@@ -1,4 +1,6 @@
 # Anthropic 提示词缓存打标：让多轮对话便宜 90% 的显式断点
+> [← 返回笔记地图](../README.md#笔记地图) · 关键机制
+
 
 > 源码位置：agent/conversation_loop.py → `apply_anthropic_cache_control`（消息处理链的最后一步）
 > 研读版本：hermes-agent v0.19.0（commit d71033a40）

@@ -1,4 +1,6 @@
 # 发请求前的最后一道防御带：消息消毒两层修复
+> [← 返回笔记地图](../README.md#笔记地图) · 关键机制
+
 
 > 源码位置：`agent/conversation_loop.py` → 发请求前的 sanitize 调用点；实现见 `agent/agent_runtime_helpers.py` → `sanitize_tool_call_arguments()`、`repair_message_sequence_with_cursor()`
 > 研读版本：hermes-agent v0.19.0（commit d71033a40）

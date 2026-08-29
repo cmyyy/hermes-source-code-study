@@ -1,4 +1,6 @@
 # 被打断时抢救半截回答：流式 Agent 的上下文一致性
+> [← 返回笔记地图](../README.md#笔记地图) · 专题深挖
+
 
 > 源码位置：`agent/conversation_loop.py` → `except InterruptedError:` 分支（`_interruptible_streaming_api_call` 的调用点）
 > 研读版本：hermes-agent v0.19.0（commit d71033a40）

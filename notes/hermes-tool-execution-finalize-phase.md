@@ -1,4 +1,6 @@
 # 工具执行与收尾：安全执行，干净收尾
+> [← 返回笔记地图](../README.md#笔记地图) · 六阶段核心 · [← 上一篇](hermes-error-recovery-phase.md)
+
 
 > 源码位置：`agent/conversation_loop.py` → `run_conversation()` 工具执行与收尾段
 > 研读版本：hermes-agent v0.19.0（commit d71033a40）

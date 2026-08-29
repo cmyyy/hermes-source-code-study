@@ -1,4 +1,6 @@
 # Cron 定时任务排查实录：调度器活在进程里，扫描器会误伤
+> [← 返回笔记地图](../README.md#笔记地图) · 故障排查与实战
+
 
 > 源码位置：hermes cron 调度器（附着在网关主进程内）；注入扫描器 `_CRON_SKILL_ASSEMBLED_PATTERNS`
 > 研读版本：hermes-agent v0.19.0（commit d71033a40）

@@ -1,4 +1,6 @@
 # 压缩状态回合级归零：三行代码防一场数据损坏
+> [← 返回笔记地图](../README.md#笔记地图) · 关键机制
+
 
 > 源码位置：agent/conversation_loop.py → run_conversation（每回合开头）
 > 研读版本：hermes-agent v0.19.0（commit d71033a40）

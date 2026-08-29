@@ -1,4 +1,6 @@
 # 响应处理：模型给的结果能不能信、能不能用
+> [← 返回笔记地图](../README.md#笔记地图) · 六阶段核心 · [← 上一篇](hermes-request-execution-phase.md) · [下一篇 →](hermes-error-recovery-phase.md)
+
 
 > 源码位置：`agent/conversation_loop.py` → `run_conversation()` 响应处理段
 > 研读版本：hermes-agent v0.19.0（commit d71033a40）

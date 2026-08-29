@@ -1,4 +1,6 @@
 # 模型的"工具菜单"是怎么来的：注册、过滤与三层验货
+> [← 返回笔记地图](../README.md#笔记地图) · 关键机制
+
 
 > 源码位置：`tools/registry.py`（登记簿）→ `model_tools.py`（收集/过滤/coerce）→ `tools/file_tools.py`（schema 示例）→ `hermes_cli/tools_config.py`（平台配置）
 > 研读版本：hermes-agent v0.19.0（commit d71033a40）

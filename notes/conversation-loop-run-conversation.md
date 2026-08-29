@@ -1,8 +1,10 @@
 # Hermes 主循环：run_conversation 全解
+> [← 返回笔记地图](../README.md#笔记地图) · 六阶段核心 · [下一篇 →](hermes-loop-entry-phase.md)
+
 
 > 源码位置：`agent/conversation_loop.py` → `run_conversation()`
 > 研读版本：hermes-agent v0.19.0（commit `d71033a40`）
-> 配套：入口转发器见 `hermes-run-conversation-forwarder.md`
+> 配套：入口转发器见 [hermes-run-conversation-forwarder.md](hermes-run-conversation-forwarder.md)
 
 ## 这个函数是什么
 
@@ -85,6 +87,6 @@ Hermes 的 AGENTS.md 第一条就是前缀稳定。体现在：
 
 ## 怎么继续深入
 
-- **阶段细节**：`hermes-loop-entry-phase.md`（A）｜`hermes-request-assembly-extras.md`（B）｜`hermes-request-execution-phase.md`（C）｜`hermes-response-handling-phase.md`（D）｜`hermes-error-recovery-phase.md`（E）｜`hermes-tool-execution-finalize-phase.md`（F）
-- **专题深挖**：`hermes-build-turn-context.md`（上下文怎么组装）｜`hermes-message-normalization.md`（字节稳定）｜`hermes-moa-context-injection.md`（多模型协作）｜`hermes-anthropic-cache-control.md`（缓存打标）
+- **阶段细节**：[hermes-loop-entry-phase.md](hermes-loop-entry-phase.md)（A）｜[hermes-request-assembly-extras.md](hermes-request-assembly-extras.md)（B）｜[hermes-request-execution-phase.md](hermes-request-execution-phase.md)（C）｜[hermes-response-handling-phase.md](hermes-response-handling-phase.md)（D）｜[hermes-error-recovery-phase.md](hermes-error-recovery-phase.md)（E）｜[hermes-tool-execution-finalize-phase.md](hermes-tool-execution-finalize-phase.md)（F）
+- **专题深挖**：[hermes-build-turn-context.md](hermes-build-turn-context.md)（上下文怎么组装）｜[hermes-message-normalization.md](hermes-message-normalization.md)（字节稳定）｜[hermes-moa-context-injection.md](hermes-moa-context-injection.md)（多模型协作）｜[hermes-anthropic-cache-control.md](hermes-anthropic-cache-control.md)（缓存打标）
 - **概念**：`moa-mixture-of-agents.md` ｜ `message-role.md` ｜ `prompt-cache-prefix-stability.md`

@@ -1,4 +1,6 @@
 # Hermes 初始化重构：从巨型构造函数到可测试的 init_agent
+> [← 返回笔记地图](../README.md#笔记地图) · 环境与配套
+
 
 > 源码位置：agent/agent_init.py → `init_agent()`（入口是 run_agent.py 的 `AIAgent.__init__`）
 > 研读版本：hermes-agent v0.19.0（commit d71033a40）

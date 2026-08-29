@@ -1,4 +1,6 @@
 # 飞书里的 markdown：一条消息只能选一种格式时的取舍
+> [← 返回笔记地图](../README.md#笔记地图) · 故障排查与实战
+
 
 > 源码位置：`plugins/platforms/feishu/adapter.py` → `_build_outbound_payload()`、`_build_markdown_post_payload()`
 > 研读版本：hermes-agent v0.19.0（commit d71033a40）

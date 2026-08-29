@@ -1,4 +1,6 @@
 # 请求执行：怎么把请求安全发出去、顺利拿回来
+> [← 返回笔记地图](../README.md#笔记地图) · 六阶段核心 · [← 上一篇](hermes-request-assembly-extras.md) · [下一篇 →](hermes-response-handling-phase.md)
+
 
 > 源码位置：`agent/conversation_loop.py` → `run_conversation()` 请求执行段
 > 研读版本：hermes-agent v0.19.0（commit d71033a40）

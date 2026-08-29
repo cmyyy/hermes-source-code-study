@@ -1,4 +1,6 @@
 # prefill 消息：塞进对话开头的 few-shot 示范
+> [← 返回笔记地图](../README.md#笔记地图) · 关键机制
+
 
 > 源码位置：`agent/conversation_loop.py` → 请求组装阶段的 prefill 插入段；配置来源 `cli.py` → `_load_prefill_messages()`（`prefill_messages_file`）
 > 研读版本：hermes-agent v0.19.0（commit d71033a40）

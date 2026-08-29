@@ -1,4 +1,6 @@
 # context engine：请求发出前的"上下文选择插槽"
+> [← 返回笔记地图](../README.md#笔记地图) · 关键机制
+
 
 > 源码位置：agent/conversation_loop.py → `_apply_context_engine_selection` / `_notify_context_engine_turn_complete`；插件发现 plugins/context_engine/
 > 研读版本：hermes-agent v0.19.0（commit d71033a40）

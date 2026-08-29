@@ -1,4 +1,6 @@
 # 工具调用消息的"合法结构"：配对、顺序、无孤儿、无空名
+> [← 返回笔记地图](../README.md#笔记地图) · 专题深挖
+
 
 > 源码位置：OpenAI 兼容工具调用协议；Hermes 在 `agent/conversation_loop.py` 的消毒层与安全网中维护
 > 研读版本：hermes-agent v0.19.0（commit d71033a40）

@@ -1,4 +1,6 @@
 # 把 Hermes 接上飞书：消息平台适配器的配置与设计
+> [← 返回笔记地图](../README.md#笔记地图) · 故障排查与实战
+
 
 > 源码位置：`plugins/platforms/feishu/`（飞书适配器）→ `hermes gateway run` 网关入口
 > 研读版本：hermes-agent v0.19.0（commit d71033a40）

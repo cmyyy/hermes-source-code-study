@@ -1,4 +1,6 @@
 # /steer：不打断 Agent 的"递纸条"机制
+> [← 返回笔记地图](../README.md#笔记地图) · 环境与配套
+
 
 > 源码位置：`agent/conversation_loop.py`（pre-API drain）→ `agent/agent_runtime_helpers.py` → `apply_pending_steer_to_tool_results()`；`agent/agent_init.py`（_pending_steer 初始化）
 > 研读版本：hermes-agent v0.19.0（commit d71033a40）

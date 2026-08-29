@@ -1,4 +1,6 @@
 # ProviderProfile：把 provider 的差异关进声明式的笼子
+> [← 返回笔记地图](../README.md#笔记地图) · 环境与配套
+
 
 > 源码位置：`providers/base.py` → `ProviderProfile`（dataclass）；实战子类见 `plugins/model-providers/deepseek/__init__.py` → `DeepSeekProfile`
 > 研读版本：hermes-agent v0.19.0（commit d71033a40）

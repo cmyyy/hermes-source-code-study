@@ -1,4 +1,6 @@
 # MoA 圆桌会议：把参考模型的答案拼进用户消息
+> [← 返回笔记地图](../README.md#笔记地图) · 关键机制
+
 
 > 源码位置：`agent/conversation_loop.py` → MoA 聚合上下文注入段；实现见 `agent/moa_loop.py` → `aggregate_moa_context()`
 > 研读版本：hermes-agent v0.19.0（commit d71033a40）

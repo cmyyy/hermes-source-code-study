@@ -1,4 +1,6 @@
 # build_turn_context：把"每回合一次的会前准备"从主循环里抽出来
+> [← 返回笔记地图](../README.md#笔记地图) · 关键机制
+
 
 > 源码位置：agent/turn_context.py → `build_turn_context()`（返回 `TurnContext` 对象）
 > 研读版本：hermes-agent v0.19.0（commit d71033a40）

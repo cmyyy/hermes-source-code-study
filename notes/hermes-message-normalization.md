@@ -1,4 +1,6 @@
 # 把 tool_calls 的 JSON 重排成标准字节：prompt cache 的省钱密码
+> [← 返回笔记地图](../README.md#笔记地图) · 关键机制
+
 
 > 源码位置：`agent/conversation_loop.py` → 请求组装阶段的 tool_calls 规范化循环（`json.loads` + `sort_keys` 重排）
 > 研读版本：hermes-agent v0.19.0（commit d71033a40）

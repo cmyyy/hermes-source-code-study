@@ -1,4 +1,6 @@
 # Desktop 启动与飞书连接修复：一个版本不匹配的教训
+> [← 返回笔记地图](../README.md#笔记地图) · 故障排查与实战
+
 
 > 源码位置：plugins/platforms/feishu/adapter.py → FeishuWSClient；`hermes desktop` 启动命令
 > 研读版本：hermes-agent v0.19.0（commit d71033a40）

@@ -1,4 +1,6 @@
 # 16 个计数器：主循环开跑前的仪表盘初始化
+> [← 返回笔记地图](../README.md#笔记地图) · 专题深挖
+
 
 > 源码位置：`agent/conversation_loop.py` → `run_conversation()` 循环入口前的初始化块
 > 研读版本：hermes-agent v0.19.0（commit d71033a40）

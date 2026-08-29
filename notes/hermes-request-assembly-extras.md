@@ -1,4 +1,6 @@
 # 请求组装：把内部消息变成"模型收得下、不浪费钱"的请求
+> [← 返回笔记地图](../README.md#笔记地图) · 六阶段核心 · [← 上一篇](hermes-loop-entry-phase.md) · [下一篇 →](hermes-request-execution-phase.md)
+
 
 > 源码位置：`agent/conversation_loop.py` → `run_conversation()` 请求组装段
 > 研读版本：hermes-agent v0.19.0（commit d71033a40）

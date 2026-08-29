@@ -1,4 +1,6 @@
 # skill nudge：怎么让 Agent 自己想起"该沉淀经验了"
+> [← 返回笔记地图](../README.md#笔记地图) · 故障排查与实战
+
 
 > 源码位置：`agent/conversation_loop.py`（计数）→ `agent/turn_finalizer.py`（检查与触发）→ `agent/tool_executor.py`（清零）
 > 研读版本：hermes-agent v0.19.0（commit d71033a40）

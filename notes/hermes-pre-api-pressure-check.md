@@ -1,4 +1,6 @@
 # 发请求前的压力检查：用估算抓住工具结果带来的暴涨
+> [← 返回笔记地图](../README.md#笔记地图) · 专题深挖
+
 
 > 源码位置：`agent/conversation_loop.py` → pre-API 压缩压力检查段（压缩四道闸的第二道）
 > 研读版本：hermes-agent v0.19.0（commit d71033a40）

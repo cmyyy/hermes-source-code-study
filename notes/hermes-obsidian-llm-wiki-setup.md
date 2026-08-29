@@ -1,4 +1,6 @@
 # Hermes + Obsidian：把知识库做成 AI 的第二大脑
+> [← 返回笔记地图](../README.md#笔记地图) · 故障排查与实战
+
 
 > 源码位置：vault 目录 `D:\llmwiki\llm-wiki` + skills 组合（llm-wiki / obsidian / personal-knowledge-mgmt）
 > 研读版本：hermes-agent v0.19.0（commit d71033a40）
